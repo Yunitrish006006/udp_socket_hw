@@ -106,8 +106,7 @@ public class client {
             }
             if(f.equals("N")) flag = false;
 
-            send_packet = new DatagramPacket(f.getBytes(), f.length()
-                    , addr, server_portNo);//訊息封包(值 大小 位址 port)
+            send_packet = new DatagramPacket(f.getBytes(), f.length(), addr, server_portNo);//訊息封包(值 大小 位址 port)
             socket.send(send_packet);
         }
         socket.close();

@@ -79,7 +79,7 @@ public class server {
             result = temp[0] + ",恭喜你猜對了！你是第" + operator.getRank(grade, tmp.name) + "名";
             operator.writeFile("UDP_socket.txt",grade);
             System.out.println(result);
-            send_packet = new DatagramPacket(result.getBytes(StandardCharsets.UTF_8),result.length(),rcv_packet.getAddress(),client_portNo);
+            send_packet = new DatagramPacket(result.getBytes(StandardCharsets.UTF_8),result.getBytes(StandardCharsets.UTF_8).length,rcv_packet.getAddress(),client_portNo);
             socket.send(send_packet);
 
             System.out.println("~~~~~~Wait client response~~~~~~");
